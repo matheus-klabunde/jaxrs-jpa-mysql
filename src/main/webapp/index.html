@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FullStack App</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="app.js"></script>
+</head>
+<body ng-controller="UserController as ctrl">
+
+  <h1>JAX-RS with AngularJS</h1>
+
+  <form ng-submit="ctrl.createUser()" ng-show="!ctrl.isEditing">
+    <h2>Create User</h2>
+    <input type="text" ng-model="ctrl.newUser.name" placeholder="Name" required>
+    <input type="email" ng-model="ctrl.newUser.email" placeholder="Email" required>
+    <button type="submit">Create</button>
+  </form>
+
+  <form ng-submit="ctrl.updateUser()" ng-show="ctrl.isEditing">
+    <h2>Edit User</h2>
+    <input type="text" ng-model="ctrl.editingUser.name" placeholder="Name" required>
+    <input type="email" ng-model="ctrl.editingUser.email" placeholder="Email" required>
+    <button type="submit">Update</button>
+    <button ng-click="ctrl.cancelEdit()">Cancel</button>
+  </form>
+
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </tr>
+    <tr ng-repeat="user in ctrl.users">
+      <td>{{ user.id }}</td>
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+      <td>
+        <button ng-click="ctrl.editUser(user)">Edit</button>
+        <button ng-click="ctrl.deleteUser(user)">Delete</button>
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
+
