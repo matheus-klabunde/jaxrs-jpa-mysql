@@ -43,7 +43,9 @@ public class UserResource {
 	
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response update(User user) {
+	@Path("/{id}")
+	public Response update(@PathParam("id") Long id, User user) {
+		user.setId(id);
 		userRepository.update(user);
 		return Response.status(Response.Status.OK).build();
 	}
