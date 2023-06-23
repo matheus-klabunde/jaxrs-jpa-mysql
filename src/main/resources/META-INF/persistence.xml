@@ -5,7 +5,7 @@
              version="3.0">
     <persistence-unit name="jpa-hibernate-mysql" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>com.mtk.jaxrs.User</class>
+        <class>com.mtk.jaxrs.model.User</class>
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/userdbtest"/>
             <property name="javax.persistence.jdbc.user" value="root"/>

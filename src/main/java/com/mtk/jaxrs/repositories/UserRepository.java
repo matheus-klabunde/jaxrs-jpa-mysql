@@ -9,7 +9,6 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 import jakarta.transaction.Transactional;
 
-
 public class UserRepository {
 
 	private EntityManagerFactory entityManagerFactory;

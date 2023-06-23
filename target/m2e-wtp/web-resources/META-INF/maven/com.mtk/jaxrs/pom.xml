@@ -58,12 +58,13 @@
             <groupId>org.glassfish.jersey.media</groupId>
             <artifactId>jersey-media-json-binding</artifactId>
         </dependency>
-
+	
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>6.2.5.Final</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
@@ -81,8 +82,8 @@
 			<artifactId>tomcat-catalina</artifactId>
 			<version>11.0.0-M7</version>
 		</dependency>
-		
     </dependencies>
+    
     <properties>
         <jersey.version>3.1.2</jersey.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
