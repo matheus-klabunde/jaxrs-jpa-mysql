@@ -54,6 +54,6 @@ public class UserResource {
 	@Path("/{id}")
 	public Response delete(@PathParam("id")	Long id) {
 		userRepository.delete(id);
-		return Response.status(Response.Status.OK).build();
+		return Response.status(Response.Status.NO_CONTENT).build();
 	}
 }
