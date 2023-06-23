@@ -1,7 +1,7 @@
 package com.mtk.jaxrs.test;
 
 import com.mtk.jaxrs.model.User;
-import com.mtk.jaxrs.repositories.UserRepository;
+import com.mtk.jaxrs.repositories.UserRepositoryImpl;
 
 public class TestConfig {
 
@@ -12,7 +12,7 @@ public class TestConfig {
 		User u3 = new User(null, "Lucas Souza", "lucas@gmail.com");
 		User u4 = new User(null, "Julia Coelho", "julia@gmail.com");
 		
-		UserRepository userRepository = new UserRepository();
+		UserRepositoryImpl userRepositoryImpl = new UserRepositoryImpl();
 		
 		/*
 		userRepository.delete(1L);
@@ -21,13 +21,13 @@ public class TestConfig {
 		userRepository.delete(4L);
 		*/
 	
-		userRepository.save(u1);
-		userRepository.save(u2);
-		userRepository.save(u3);
-		userRepository.save(u4);
+		userRepositoryImpl.save(u1);
+		userRepositoryImpl.save(u2);
+		userRepositoryImpl.save(u3);
+		userRepositoryImpl.save(u4);
 		
 		System.out.println("Users Successfully saved!");
 		
-		userRepository.closeConnection();
+		userRepositoryImpl.closeConnection();
 	}
 }

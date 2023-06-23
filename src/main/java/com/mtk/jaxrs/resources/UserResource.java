@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.mtk.jaxrs.model.User;
 import com.mtk.jaxrs.repositories.UserRepository;
+import com.mtk.jaxrs.repositories.UserRepositoryFactory;
 
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.DELETE;
@@ -19,7 +20,7 @@ import jakarta.ws.rs.core.Response;
 @Path("users")
 public class UserResource {
 
-	UserRepository userRepository = new UserRepository();
+	UserRepository userRepository = UserRepositoryFactory.createUserRepository();
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
